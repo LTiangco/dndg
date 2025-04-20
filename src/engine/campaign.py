@@ -1,0 +1,1 @@
+"""Generates and manages a linear list of StoryBlocks forming a single campaign."""

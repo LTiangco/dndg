@@ -1,0 +1,1 @@
+"""Resolves one combat encounter: initiative, attack rolls, damage, victory checks."""

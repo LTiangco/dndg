@@ -1,0 +1,1 @@
+"""Entry point for the game; parses CLI args and starts a Game instance."""

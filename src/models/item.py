@@ -1,0 +1,1 @@
+"""Data class for items that modify Character stats or are used in encounters."""

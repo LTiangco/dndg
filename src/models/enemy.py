@@ -1,0 +1,1 @@
+"""NPC Enemy inheriting from Character and adding simple AI action selection."""

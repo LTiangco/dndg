@@ -1,0 +1,1 @@
+"""Data class representing a modular narrative unit within a campaign."""

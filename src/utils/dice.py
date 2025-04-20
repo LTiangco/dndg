@@ -1,0 +1,1 @@
+"""Utility for parsing and rolling dice expressions such as '2d6+3'."""

@@ -1,0 +1,1 @@
+"""Thin CLI layer: displays text menus, reads input, delegates to Game logic."""
