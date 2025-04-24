@@ -66,41 +66,19 @@ dnd_roguelike/
 
 ---
 
-## Per‑File Docstrings
+## Game Logic
 
-Copy‑paste the appropriate snippet as the first lines of each file.
-
-```python
-# src/main.py
-"""Entry point for the game; parses CLI args and starts a Game instance."""
-
-# src/engine/game.py
-"""Orchestrates the high‑level game flow: menu, character creation, campaign loop."""
-
-# src/engine/campaign.py
-"""Generates and manages a linear list of StoryBlocks forming a single campaign."""
-
-# src/engine/combat.py
-"""Resolves one combat encounter: initiative, attack rolls, damage, victory checks."""
-
-# src/models/character.py
-"""Player‑controlled Character with base stats, HP, inventory, and simple actions."""
-
-# src/models/enemy.py
-"""NPC Enemy inheriting from Character and adding simple AI action selection."""
-
-# src/models/item.py
-"""Data class for items that modify Character stats or are used in encounters."""
-
-# src/models/story_block.py
-"""Data class representing a modular narrative unit within a campaign."""
-
-# src/utils/dice.py
-"""Utility for parsing and rolling dice expressions such as '2d6+3'."""
-
-# src/cli/interface.py
-"""Thin CLI layer: displays text menus, reads input, delegates to Game logic."""
-```
+|File | Class | Responsibility (one‑liner)|
+|-----|-------|---------------------------|
+|utils/dice.py | Dice (static) | Parse “XdY+Z” strings and return random rolls.|
+|models/story_block.py | StoryBlock (@dataclass) | Holds description, difficulty, block_type.|
+|models/character.py | Character (@dataclass) | Player attributes, attack, take_damage, basic inventory.|
+|models/enemy.py | Enemy(Character) | Adds AI stub: decide_action().|
+|models/item.py | Item (@dataclass) | Name, modifiers (e.g., +2 strength).|
+|engine/campaign.py | Campaign | Load JSON, build ordered‑random block list, expose next_block().|
+|engine/combat.py | Combat | Resolve one encounter: turn order, roll to‑hit, damage.|
+|engine/game.py | Game | High‑level loop: menu → create character → play campaign.|
+|cli/interface.py | CLI | Display menus, read user input, call Game methods.|
 
 ---
 
